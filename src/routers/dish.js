@@ -1,5 +1,6 @@
 const express = require('express')
 const multer = require('multer')
+const sharp = require('sharp')
 const Dish = require('../models/dish')
 const auth = require('../middlewares/auth')
 const { DISH_MAX_IMAGE_SIZE } = require('../constants')
@@ -156,8 +157,9 @@ router.post('/:id/image', auth, upload.single('file'), async (req, res) => {
 			return res.status(404).send()
 		}
 
+		const buffer = await sharp(req.file.buffer).resize(500, 500).toBuffer()
 		dish.image = {
-			source: req.file.buffer,
+			source: buffer,
 			mimeType: req.file.mimetype
 		}
 

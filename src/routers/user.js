@@ -1,5 +1,6 @@
 const express = require('express')
 const multer = require('multer')
+const sharp = require('sharp')
 const User = require('../models/user')
 const auth = require('../middlewares/auth')
 const { USER_MAX_AVATAR_SIZE } = require('../constants')
@@ -91,8 +92,9 @@ const upload = multer({
 })
 router.post('/me/avatar', auth, upload.single('file'), async (req, res) => {
 	try {
+		const buffer = await sharp(req.file.buffer).resize(200, 200).toBuffer()
 		req.user.avatar = {
-			source: req.file.buffer,
+			source: buffer,
 			mimeType: req.file.mimetype
 		}
 		await req.user.save()
