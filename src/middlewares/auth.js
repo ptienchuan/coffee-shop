@@ -9,7 +9,7 @@ const auth = async (req, res, next) => {
 		const user = await User.findOne({ _id: payload._id })
 
 		if (user.closed) {
-			return res.status(403).send({ error: "This account have been closed" })
+			return res.status(403).send({ error: "This account has been closed" })
 		}
 
 		const tokens = user.tokens.map(({ token }) => token.toString())
