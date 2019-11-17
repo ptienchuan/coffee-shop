@@ -14,7 +14,7 @@
 # Endpoint documents:
 
 ## <br>1. Create a user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: POST
@@ -25,6 +25,7 @@
 
 #### *Body:*
 The body is a json:
+
 | Key | Required | Description
 | :- | :-: | :-
 | account | ✅ | Min length is 5 digits, max length is 30 digits
@@ -49,7 +50,7 @@ The body is a json:
 
 
 ## <br><br>2. Login user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: POST
@@ -60,6 +61,7 @@ The body is a json:
 
 #### *Body:*
 The body is a json:
+
 | Key | Required | Description
 | :- | :-: | :-
 | account | ✅
@@ -81,7 +83,7 @@ The body is a json:
 
 
 ## <br><br>3. Get profile of user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: GET
@@ -105,7 +107,7 @@ The body is a json:
 
 
 ## <br><br>4. Update profile of user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: PUT
@@ -117,6 +119,7 @@ The body is a json:
 
 #### *Body:*
 The body is a json:
+
 | Key | Required | Description
 | :- | :-: | :-
 | password |
@@ -140,7 +143,7 @@ The body is a json:
 
 
 ## <br><br>5. Logout user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: POST
@@ -165,7 +168,7 @@ The body is a json:
 
 
 ## <br><br>6. Logout user from all devices:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: POST
@@ -190,7 +193,7 @@ The body is a json:
 
 
 ## <br><br>7. Upload avatar image of user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: POST
@@ -202,6 +205,7 @@ The body is a json:
 
 #### *Body:*
 The body is a json:
+
 | Key | Required | Description
 | :- | :-: | :-
 | file | ✅ | A file upload with extension is jpg/jpeg/png. Max file size is 2Mb
@@ -222,7 +226,7 @@ The body is a json:
 
 
 ## <br><br>8. Serve avatar image of user:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: GET
@@ -247,7 +251,7 @@ The body is a json:
 
 
 ## <br><br>9. Close user account:
----
+
 ## **Request:**
 #### *Endpoint:*
 	Method: POST
