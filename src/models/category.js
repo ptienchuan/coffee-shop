@@ -4,8 +4,9 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 const schema = new mongoose.Schema({
 	name: {
 		type: String,
+		required: true,
 		trim: true,
-		required: true
+		maxlength: 50
 	},
 	nameLower: {
 		type: String,
