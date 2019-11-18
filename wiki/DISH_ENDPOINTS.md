@@ -1,17 +1,17 @@
 # Endpoint list:
 | | Method | Url | Required Auth | Purpose |
 | :-: | :- | :- | :-: | :- |
-| 1 | POST | /dishes | ✅ | Create a dish
-| 2 | GET | /dishes | ✅ | Get dishes list
-| 3 | GET | /dishes/:id | ✅ | Get a dish
-| 4 | PUT | /dishes/:id | ✅ | Update a dish
-| 5 | POST | /dishes/:id/image | ✅ | Upload dish image
-| 6 | GET | /dishes/:id/image | ✅ | Serve dish image
+| 1 | POST | /dishes | ✅ | [Create a dish](#create)
+| 2 | GET | /dishes | ✅ | [Get dishes list](#get-list)
+| 3 | GET | /dishes/:id | ✅ | [Get a dish](#get)
+| 4 | PUT | /dishes/:id | ✅ | [Update a dish](#update)
+| 5 | POST | /dishes/:id/image | ✅ | [Upload dish image](#upload)
+| 6 | GET | /dishes/:id/image | ✅ | [Serve dish image](#serve-image)
 | 7 | DELETE | /dishes | ✅ | [Delete a dish](#delete)
 
 # <br>Endpoint documents:
 
-## 1. Create a dish:
+## <a name="create"></a>1. Create a dish:
 
 ## **Request:**
 #### *Endpoint:*
@@ -49,7 +49,7 @@ The body is a json:
 
 
 
-## <br><br>2. Get dishes list:
+## <br><br><a name="get-list"></a>2. Get dishes list:
 
 ## **Request:**
 #### *Endpoint:*
@@ -98,7 +98,7 @@ The body is a json:
 
 
 
-## <br><br>3. Get a dish:
+## <br><br><a name="get"></a>3. Get a dish:
 
 ## **Request:**
 #### *Endpoint:*
@@ -127,7 +127,7 @@ The body is a json:
 
 
 
-## <br><br>4. Update a dish:
+## <br><br><a name="update"></a>4. Update a dish:
 
 ## **Request:**
 #### *Endpoint:*
@@ -167,7 +167,7 @@ The body is a json:
 
 
 
-## <br><br>5. Upload dish image:
+## <br><br><a name="upload"></a>5. Upload dish image:
 
 ## **Request:**
 #### *Endpoint:*
@@ -200,7 +200,7 @@ The body is a json:
 
 
 
-## <br><br>6. Serve dish image:
+## <br><br><a name="serve-image"></a>6. Serve dish image:
 
 ## **Request:**
 #### *Endpoint:*
