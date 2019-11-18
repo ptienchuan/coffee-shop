@@ -35,3 +35,13 @@
 	For production:
 
 	`$ npm start`
+
+## Documents:
+
+Read more from the document of the project in:
+
+`./wiki/USER_ENDPOINTS.md`
+
+`./wiki/DISH_ENDPOINTS.md`
+
+`./wiki/CATEGORY_ENDPOINTS.md`
