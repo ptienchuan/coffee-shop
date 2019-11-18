@@ -1,19 +1,19 @@
 # Endpoint list:
 |  | Method | Url | Required Auth | Purpose |
 | :-: | :- | :- | :-: | :- |
-| 1 | POST | /users |  | Create a user
-| 2 | POST | /users/login |  | Login user
-| 3 | GET | /users/me | ✅ | Get profile of user
-| 4 | PUT | /users/me | ✅ | Update profile of user
-| 5 | POST | /users/logout | ✅ | Logout user
-| 6 | POST | /users/logoutAll | ✅ | Logout user from all divices
-| 7 | POST | /users/me/avatar | ✅ | Upload avatar image of user
-| 8 | GET | /users/me/avatar | ✅ | Serve avatar image of user
-| 9 | POST | /users/close | ✅ | Close user's account
+| 1 | POST | /users |  | [Create a user](#create)
+| 2 | POST | /users/login |  | [Login user](#login)
+| 3 | GET | /users/me | ✅ | [Get profile of user](#get-profile)
+| 4 | PUT | /users/me | ✅ | [Update profile of user](#update-profile)
+| 5 | POST | /users/logout | ✅ | [Logout user](#logout)
+| 6 | POST | /users/logoutAll | ✅ | [Logout user from all divices](#logout-all)
+| 7 | POST | /users/me/avatar | ✅ | [Upload avatar image of user](#upload-avatar)
+| 8 | GET | /users/me/avatar | ✅ | [Serve avatar image of user](#serve-avatar)
+| 9 | POST | /users/close | ✅ | [Close user's account](#close)
 
 # <br>Endpoint documents:
 
-## 1. Create a user:
+## <a name="create"></a>1. Create a user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -49,7 +49,7 @@ The body is a json:
 
 
 
-## <br><br>2. Login user:
+## <br><br><a name="login"></a>2. Login user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -82,7 +82,7 @@ The body is a json:
 	Body: <Object> error content
 
 
-## <br><br>3. Get profile of user:
+## <br><br><a name="get-profile"></a>3. Get profile of user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -106,7 +106,7 @@ The body is a json:
 	Body: <Object> message error
 
 
-## <br><br>4. Update profile of user:
+## <br><br><a name="update-profile"></a>4. Update profile of user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -142,7 +142,7 @@ The body is a json:
 	Body: <Object> message error
 
 
-## <br><br>5. Logout user:
+## <br><br><a name="logout"></a>5. Logout user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -167,7 +167,7 @@ The body is a json:
 	Status: 500
 
 
-## <br><br>6. Logout user from all devices:
+## <br><br><a name="logout-all"></a>6. Logout user from all devices:
 
 ## **Request:**
 #### *Endpoint:*
@@ -192,7 +192,7 @@ The body is a json:
 	Status: 500
 
 
-## <br><br>7. Upload avatar image of user:
+## <br><br><a name="upload-avatar"></a>7. Upload avatar image of user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -224,7 +224,7 @@ The body is a json:
 	Body: <Object> message error
 
 
-## <br><br>8. Serve avatar image of user:
+## <br><br><a name="serve-avatar"></a>8. Serve avatar image of user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -249,7 +249,7 @@ The body is a json:
 	Status: 404
 
 
-## <br><br>9. Close user account:
+## <br><br><a name="close"></a>9. Close user account:
 
 ## **Request:**
 #### *Endpoint:*
