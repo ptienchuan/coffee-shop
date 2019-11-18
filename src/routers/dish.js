@@ -195,7 +195,7 @@ router.delete('/:id', auth, async (req, res) => {
 		const dish = await Dish.findOne({ _id, owner: req.user._id })
 
 		if (!dish) {
-			return res.status(400).send()
+			return res.status(404).send()
 		}
 
 		await dish.remove()
