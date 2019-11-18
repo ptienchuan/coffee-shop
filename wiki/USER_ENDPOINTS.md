@@ -11,9 +11,9 @@
 | 8 | GET | /users/me/avatar | ✅ | Serve avatar image of user
 | 9 | POST | /users/close | ✅ | Close user's account
 
-# Endpoint documents:
+# <br>Endpoint documents:
 
-## <br>1. Create a user:
+## 1. Create a user:
 
 ## **Request:**
 #### *Endpoint:*
@@ -36,7 +36,7 @@ The body is a json:
 
 ## **Response:**
 #### *Success:*
-	Status: 200
+	Status: 201
 	Body:
 		{
 			newUser: <Object>
@@ -204,7 +204,6 @@ The body is a json:
 	Authorization: Bearer <token>
 
 #### *Body:*
-The body is a json:
 
 | Key | Required | Description
 | :- | :-: | :-
