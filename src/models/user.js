@@ -73,6 +73,7 @@ schema.methods.toJSON = function () {
 	delete userObject.avatar
 	delete userObject.tokens
 	delete userObject.closed
+	delete userObject.closedDate
 
 	return userObject
 }

@@ -7,7 +7,13 @@ const { USER_MAX_AVATAR_SIZE } = require('../constants')
 const router = express.Router()
 
 router.post('/', async (req, res) => {
-	const newUser = new User(req.body)
+	const newUser = new User({
+		...req.body,
+		avatar: undefined,
+		tokens: undefined,
+		closed: undefined,
+		closedDate: undefined
+	})
 
 	try {
 		await newUser.save()

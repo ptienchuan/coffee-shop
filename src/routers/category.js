@@ -19,9 +19,6 @@ router.post('/', auth, async (req, res) => {
 	}
 })
 
-// GET	/categories?name=coffee					-> search by categories.name
-// GET	/categories?full=true						-> allow search dishes of the category
-// GET	/categories?publishedDishes=true	-> when option full=true, allow search dishes by published flag
 router.get('/', auth, async (req, res) => {
 	let willGetDishes = false
 	let dishMatch = { owner: req.user._id }

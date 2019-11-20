@@ -9,7 +9,8 @@ const router = express.Router()
 router.post('/', auth, async (req, res) => {
 	const newDish = new Dish({
 		...req.body,
-		owner: req.user._id
+		owner: req.user._id,
+		image: undefined
 	})
 
 	try {
@@ -20,12 +21,6 @@ router.post('/', auth, async (req, res) => {
 	}
 })
 
-// GET	/dishes?published=true			-> search by published
-// GET	/dishes?category=aceoinef	  -> search by category
-// GET	/dishes?name=coffee				-> search like by name
-// GET	/dishes?key=coffee				  -> search like by description or name
-// GET	/dishes?minPrice=1000		   -> search by price
-// GET	/dishes?maxPrice=50000		 -> search by price
 router.get('/', auth, async (req, res) => {
 	let conditions = { owner: req.user._id }
 	let limit, skip
