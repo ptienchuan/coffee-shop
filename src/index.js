@@ -14,7 +14,7 @@ app.use('/dishes', dishRouter)
 app.use('/categories', categoryRouter)
 
 app.all('*', (req, res) => {
-	res.status(404).send()
+	res.status(404).send("API is running!")
 })
 
 app.listen(port, () => {
