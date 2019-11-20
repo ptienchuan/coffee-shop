@@ -104,8 +104,11 @@ schema.methods.generateToken = async function () {
 
 schema.statics.findByCredentials = async function (account, password) {
 	const user = await this.findOne({ account })
-	const isValid = await bcrypt.compare(password, user.password)
+	if (!user) {
+		throw new Error("Account or password is invalid")
+	}
 
+	const isValid = await bcrypt.compare(password, user.password)
 	if (!isValid) {
 		throw new Error("Account or password is invalid")
 	}
