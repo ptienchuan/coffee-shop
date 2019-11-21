@@ -64,7 +64,7 @@ The body is a json:
 | publishedDishes | Boolean |  | **Only Parameter.full is true**
 | limit | Number | | Limit of categories will be returned
 | skip | Number | | Number of categories will be skipped
-| sortBy | String | | The value has a format like this:<br>sortBy=&lt;field&gt;:&lt;asc/desc&gt;<br>The case of ASC sorting, the syntax can like this:<br>sortBy=&lt;field&gt;<br>```name```<br>```createdAt```<br>```updatedAt```
+| sortBy | String | | - The value has a format like this:<br>sortBy=&lt;field&gt;:&lt;asc/desc&gt;<br>- The case of ASC sorting, the syntax can like this:<br>sortBy=&lt;field&gt;<br>- The fields are allowed to sort: <br>```name```<br>```createdAt```<br>```updatedAt```
 
 
 ## **Response:**
