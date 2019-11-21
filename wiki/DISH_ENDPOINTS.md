@@ -72,7 +72,7 @@ The body is a json:
 | category | String | | Find by category id
 | limit | Number | | Limit of dishes will be returned
 | skip | Number | | Number of dishes will be skipped
-| sortBy | String | | - The value has a format like this:<br>sortBy=&lt;field&gt;:&lt;asc/desc&gt;<br>- The case of ASC sorting, the syntax can like this:<br>sortBy=&lt;field&gt;<br>- The fields are allowed to sort: <br>```name```<br>```price```<br>```published```<br>```category```<br>```createdAt```<br>```updatedAt```
+| sortBy | String | | - The value has a format like this: <br>```sortBy=<field>:<asc/desc>```<br>```ex: sortBy=createdAt:desc```<br>- The case of ASC sorting, the syntax can like this: <br>```sortBy=<field>```<br> ```ex: sortyBy=createdAt``` <br>- The fields are allowed to sort: <br>```name```<br>```price```<br>```published```<br>```category```<br>```createdAt```<br>```updatedAt```
 
 
 ## **Response:**
