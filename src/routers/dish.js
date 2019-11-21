@@ -64,12 +64,17 @@ router.get('/', auth, async (req, res) => {
 
 		// query to sort: /dishes?sortBy=price:desc
 		if (req.query.sortBy) {
+			const allowFields = ['name', 'price', 'published', 'category', 'createdAt', 'updatedAt']
 			sortInfo = req.query.sortBy.split(':')
+			if (!allowFields.includes(sortInfo[0])) {
+				throw new Error()
+			}
+
 			sort = {}
 			sort[sortInfo[0]] = (sortInfo[1] && sortInfo[1].toLowerCase() === 'desc') ? -1 : 1
 		}
 	} catch (e) {
-		return res.status(400).send({ error: "The query field is invalid" })
+		return res.status(400).send({ error: "The query is invalid" })
 	}
 
 	try {
