@@ -60,7 +60,7 @@ The body is a json:
 | Key | Type | Required | Description
 | :- | :- | :-: | :-
 | name | String |  | Find by name
-| full | Boolean |  | **The case of *true*:**<br>All of dishes belong to the category will be retrieved beside the category data<br>**The case of *false* or isn't setted:**<br>Only category data will be retrieved
+| full | Boolean |  | **The case of *true*:**<br>All of dishes belong to the category will be retrieved beside the category data<br>**The case of *false* or isn't set:**<br>Only category data will be retrieved
 | publishedDishes | Boolean |  | **Only Parameter.full is true**
 | limit | Number | | Limit of categories will be returned
 | skip | Number | | Number of categories will be skipped
@@ -104,6 +104,13 @@ The body is a json:
 #### *Headers:*
 	Content-Type: application/json
 	Authorization: Bearer <token>
+
+#### *Parameters:*
+
+| Key | Type | Required | Description
+| :- | :- | :-: | :-
+| full | Boolean |  | **The case of *true*:**<br>All of dishes belong to the category will be retrieved beside the category data<br>**The case of *false* or isn't set:**<br>Only category data will be retrieved
+| publishedDishes | Boolean |  | **Only Parameter.full is true**
 
 
 ## **Response:**
