@@ -5,19 +5,6 @@ const jwt = require('jsonwebtoken')
 const { JWT_PRIVATE_KEY, JWT_EXPIRE, ENCRYPT_ROUND } = require('../constants')
 
 const schema = new mongoose.Schema({
-	account: {
-		type: String,
-		required: true,
-		maxlength: 30,
-		minlength: 5,
-		lowercase: true,
-		trim: true,
-		unique: true
-	},
-	password: {
-		type: String,
-		required: true
-	},
 	email: {
 		type: String,
 		required: true,
@@ -30,6 +17,10 @@ const schema = new mongoose.Schema({
 				throw new Error("The email is invalid")
 			}
 		}
+	},
+	password: {
+		type: String,
+		required: true
 	},
 	name: {
 		type: String,
@@ -99,19 +90,19 @@ schema.methods.generateToken = async function () {
 
 		return token
 	} catch (e) {
-		throw new Error("Account or password is invalid")
+		throw new Error("Email or password is invalid")
 	}
 }
 
-schema.statics.findByCredentials = async function (account, password) {
-	const user = await this.findOne({ account })
+schema.statics.findByCredentials = async function (email, password) {
+	const user = await this.findOne({ email })
 	if (!user) {
-		throw new Error("Account or password is invalid")
+		throw new Error("Email or password is invalid")
 	}
 
 	const isValid = await bcrypt.compare(password, user.password)
 	if (!isValid) {
-		throw new Error("Account or password is invalid")
+		throw new Error("Email or password is invalid")
 	}
 	else if (user.closed) {
 		throw new Error("This account have been closed")

@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
 	try {
-		const user = await User.findByCredentials(req.body.account, req.body.password)
+		const user = await User.findByCredentials(req.body.email, req.body.password)
 		const token = await user.generateToken()
 
 		res.send({user, token})
@@ -42,7 +42,7 @@ router.get('/me', auth, async (req, res) => {
 
 router.put('/me', auth, async (req, res) => {
 	const updateFields = Object.keys(req.body)
-	const allowUpdateFields = ["password", "email", "name"]
+	const allowUpdateFields = ["password", "name"]
 	const isValidFields = updateFields.every((field) => allowUpdateFields.includes(field))
 
 	if (!isValidFields) {
