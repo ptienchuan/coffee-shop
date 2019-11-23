@@ -91,6 +91,16 @@ router.get('/', auth, async (req, res) => {
 
 router.get('/:id', auth, async (req, res) => {
 	const _id = req.params.id
+	let willGetDishes = false
+	let dishMatch = { owner: req.user._id }
+
+	// query for dish
+	if (req.query.full) {
+		willGetDishes = req.query.full.toLowerCase() === 'true'
+		if (req.query.publishedDishes) {
+			dishMatch.published = req.query.publishedDishes.toLowerCase() === 'true'
+		}
+	}
 
 	try {
 		const category = await Category.findOne({ _id, owner: req.user._id })
@@ -99,10 +109,12 @@ router.get('/:id', auth, async (req, res) => {
 			return res.status(404).send()
 		}
 
-		await category.populate({
-			path: 'dishes',
-			match: { published: true }
-		}).execPopulate()
+		if (willGetDishes) {
+			await category.populate({
+				path: 'dishes',
+				match: dishMatch
+			}).execPopulate()
+		}
 
 		res.send(category)
 	} catch (e) {
