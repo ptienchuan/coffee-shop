@@ -182,7 +182,7 @@ The body is a json:
 
 | Key | Required | Description
 | :- | :-: | :-
-| file | ✅ | A file upload with extension is jpg/jpeg/png. Max file size is 2Mb
+| file | ✅ | A file upload with extension is jpg/jpeg/png. Max file size is 2Mb.<br>*The image will be resized to 500x500 pixel after uploaded.*
 
 
 ## **Response:**
