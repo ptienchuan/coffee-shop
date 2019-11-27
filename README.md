@@ -29,7 +29,7 @@
 		- By default, the project will run on port `3000` and will use the database with database name is `coffee-shop`
 
 	- For `testing`:
-		- Clone file `.env-template` to the same directory and rename to `test.env`
+		- Clone file `test.env-template` to the same directory and rename to `test.env`
 		- By default, project will use the database with database name is `coffee-shop-test` for testing
 
 **4. Run project:**
@@ -37,9 +37,9 @@
 - For `development`:
 
 	`$ npm start`
-	
+
 	or
-	
+
 	`$ npm run dev` *this command will watch every change of the source to restart the server automatically*
 
 - For `testing`:
