@@ -9,9 +9,10 @@
 - **multer**: to upload file
 - **sharp**: to handle image
 - **dotenv**: to handle environment
+- **jest**: to test
 
 ## Install
-1. Clone source code by git HTTPS:
+1. Clone the source code by git HTTPS:
 
 	`https://github.com/ptienchuan/dish-management-api.git`
 
@@ -23,16 +24,25 @@
 
 3. Setup environment:
 
-	- Clone file `.env-template` to the same directory and rename to `.env`
-	- By default, project will run on port `3000` and will use the database with database name is `coffee-shop`
+	- For `development`:
+		- Clone file `.env-template` to the same directory and rename to `.env`
+		- By default, the project will run on port `3000` and will use the database with database name is `coffee-shop`
+
+	- For `testing`:
+		- Clone file `.env-template` to the same directory and rename to `test.env`
+		- By default, project will use the database with database name is `coffee-shop-test` for testing
 
 4. Run project:
 
-	For development:
+	For `development`:
 
 	`$ npm run dev`
 
-	For production:
+	For `testing`:
+
+	`$ npm run test`
+
+	For `production`:
 
 	`$ npm start`
 
