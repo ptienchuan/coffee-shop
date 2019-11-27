@@ -34,17 +34,18 @@
 
 4. Run project:
 
-	For `development`:
+- For `development`:
 
-	`$ npm run dev`
+	`$ npm start`
+	
+	or
+	
+	`$ npm run dev` *this command will watch every change of the source to restart the server automatically*
 
-	For `testing`:
+- For `testing`:
 
 	`$ npm run test`
 
-	For `production`:
-
-	`$ npm start`
 
 ## Documents:
 
