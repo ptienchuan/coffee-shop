@@ -1,3 +1,4 @@
+require('./config/database')
 const express = require('express')
 const dishRouter = require('./routers/dish')
 const userRouter = require('./routers/user')
