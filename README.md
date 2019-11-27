@@ -30,7 +30,7 @@
 
 	- For `testing`:
 		- Clone file `test.env-template` to the same directory and rename to `test.env`
-		- By default, project will use the database with database name is `coffee-shop-test` for testing
+		- By default, the project will use the database with database name is `coffee-shop-test` for testing
 
 **4. Run project:**
 

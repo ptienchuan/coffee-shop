@@ -105,7 +105,7 @@ schema.statics.findByCredentials = async function (email, password) {
 		throw new Error("Email or password is invalid")
 	}
 	else if (user.closed) {
-		throw new Error("This account have been closed")
+		throw new Error("This account has been closed")
 	}
 
 	return user
