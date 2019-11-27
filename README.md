@@ -12,17 +12,17 @@
 - **jest**: to test
 
 ## Install
-1. Clone the source code by git HTTPS:
+**1. Clone the source code by git HTTPS:**
 
 	`https://github.com/ptienchuan/dish-management-api.git`
 
-2. Install packages:
+**2. Install packages:**
 
 	Run command:
 
 	`$ npm install`
 
-3. Setup environment:
+**3. Setup environment:**
 
 	- For `development`:
 		- Clone file `.env-template` to the same directory and rename to `.env`
@@ -32,7 +32,7 @@
 		- Clone file `.env-template` to the same directory and rename to `test.env`
 		- By default, project will use the database with database name is `coffee-shop-test` for testing
 
-4. Run project:
+**4. Run project:**
 
 - For `development`:
 
