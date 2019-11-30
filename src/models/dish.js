@@ -20,7 +20,7 @@ const schema = new mongoose.Schema({
 	},
 	price: {
 		type: Number,
-		maxlength: 7,
+		max: 10000000,	// 10,000,000
 		trim: true,
 		min: 0,
 		default: 0

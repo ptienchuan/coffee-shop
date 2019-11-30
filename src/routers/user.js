@@ -114,7 +114,7 @@ router.post('/me/avatar', auth, upload.single('file'), async (req, res) => {
 
 router.get('/me/avatar', auth, (req, res) => {
 	try {
-		if (!req.user.avatar) {
+		if (!req.user.avatar.source) {
 			throw new Error()
 		}
 

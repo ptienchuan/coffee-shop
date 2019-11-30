@@ -116,7 +116,6 @@ schema.pre('save', async function (next) {
 
 	if (user.isModified('password')) {
 		user.password = await bcrypt.hash(user.password, ENCRYPT_ROUND )
-		user.tokens = []
 	}
 
 	next()
