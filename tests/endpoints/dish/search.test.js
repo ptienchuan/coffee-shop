@@ -5,9 +5,8 @@ const {
 	defaultUser,
 	defaultDish,
 	dishOne,
-	dishTwo,
 	dishThree,
-	dishFour,
+	dishSix,
 	defaultCategory,
 	setupDatabase
 } = require('../../fixtures/database')
@@ -20,7 +19,7 @@ describe('Should fetch some dishes successfully:', () => {
 			.get('/dishes')
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			expect(200)
-		expect(response.body).toHaveLength(5)
+		expect(response.body).toHaveLength(6)
 
 		// assert all private fields have been hidden
 		for (const dish of response.body) {
@@ -59,15 +58,14 @@ describe('Should fetch some dishes successfully:', () => {
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			.expect(200)
 		// assert the number of data are responsed is right
-		expect(responseTwo.body).toHaveLength(1)
+		expect(responseTwo.body).toHaveLength(2)
 
-		// assert all private fields have been hidden
-		expect(responseTwo.body[0].owner).toBeUndefined()
-		expect(responseTwo.body[0].image).toBeUndefined()
-		expect(responseTwo.body[0].nameLower).toBeUndefined()
-
-		// assert the response data is right
-		expect(responseTwo.body[0]._id).toBe(dishOne._id.toString())
+		for (const dish of responseTwo.body) {
+			// assert all private fields have been hidden
+			expect(dish.owner).toBeUndefined()
+			expect(dish.image).toBeUndefined()
+			expect(dish.nameLower).toBeUndefined()
+		}
 	})
 
 	test('When search by category', async () => {
@@ -79,7 +77,7 @@ describe('Should fetch some dishes successfully:', () => {
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			.expect(200)
 		// assert the number of response data is right
-		expect(response.body).toHaveLength(4)
+		expect(response.body).toHaveLength(5)
 
 		for (const dish of response.body) {
 			// assert all private fields have been hidden
@@ -171,7 +169,7 @@ describe('Should fetch some dishes successfully:', () => {
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			.expect(200)
 		// assert the number of response data is right
-		expect(res.body).toHaveLength(4)
+		expect(res.body).toHaveLength(5)
 
 		for (const dish of res.body) {
 			// assert the response data have price greater than 25000
@@ -190,7 +188,7 @@ describe('Should fetch some dishes successfully:', () => {
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			.expect(200)
 		// assert the number of response data is right
-		expect(res.body).toHaveLength(4)
+		expect(res.body).toHaveLength(5)
 
 		for (const dish of res.body) {
 			// assert the response data have price greater than 25000
@@ -210,7 +208,7 @@ describe('Should fetch some dishes successfully:', () => {
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			.expect(200)
 		// assert the number of response data is right
-		expect(res.body).toHaveLength(4)
+		expect(res.body).toHaveLength(5)
 
 		for (const dish of res.body) {
 			// assert the response data have price greater than 25000
@@ -252,8 +250,8 @@ describe('Should fetch some dishes successfully:', () => {
 		expect(res.body).toHaveLength(3)
 
 		// assert the data is right
-		expect(res.body[0]._id).toBe(dishFour._id.toString())
-		expect(res.body[2]._id).toBe(dishTwo._id.toString())
+		expect(res.body[0]._id).toBe(dishSix._id.toString())
+		expect(res.body[2]._id).toBe(dishThree._id.toString())
 	})
 })
 
@@ -280,7 +278,7 @@ describe('Should not fetch any dishes:', () => {
 			.get('/dishes')
 			.query({
 				limit: 5,
-				skip: 5
+				skip: 6
 			})
 			.set('Authorization', `Bearer ${defaultUser.tokens[0].token}`)
 			.expect(404)

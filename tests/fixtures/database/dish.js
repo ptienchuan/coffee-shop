@@ -43,6 +43,14 @@ const dishFive = {
 	price: 20000
 }
 
+const dishSix = {
+	_id: mongoose.Types.ObjectId(),
+	name: 'Ice milk coffee',
+	description: 'ice milk coffee',
+	price: 25000,
+	published: false,
+}
+
 const setupDatabase = async () => {
 	await Dish.deleteMany()
 	await new Dish(defaultDish).save()
@@ -51,6 +59,7 @@ const setupDatabase = async () => {
 	await new Dish(dishThree).save()
 	await new Dish(dishFour).save()
 	await new Dish(dishFive).save()
+	await new Dish(dishSix).save()
 }
 
 module.exports = {
@@ -60,5 +69,6 @@ module.exports = {
 	dishThree,
 	dishFour,
 	dishFive,
+	dishSix,
 	setupDatabase
 }

@@ -5,6 +5,8 @@ const dummyDish = require('./dish')
 // categories
 dummyCategory.defaultCategory.owner = dummyUser.defaultUser._id
 dummyCategory.categoryOne.owner = dummyUser.userOne._id
+dummyCategory.categoryTwo.owner = dummyUser.defaultUser._id
+dummyCategory.categoryThree.owner = dummyUser.defaultUser._id
 
 // dishes
 dummyDish.dishOne.owner = dummyUser.defaultUser._id
@@ -18,6 +20,8 @@ dummyDish.dishThree.owner = dummyUser.defaultUser._id
 dummyDish.dishThree.category = dummyCategory.defaultCategory._id
 dummyDish.dishFour.owner = dummyUser.defaultUser._id
 dummyDish.dishFour.category = dummyCategory.defaultCategory._id
+dummyDish.dishSix.owner = dummyUser.defaultUser._id
+dummyDish.dishSix.category = dummyCategory.defaultCategory._id
 
 dummyDish.dishFive.owner = dummyUser.userOne._id
 dummyDish.dishFive.category = dummyCategory.categoryOne._id
