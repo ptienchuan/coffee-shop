@@ -181,7 +181,8 @@ router.post('/:id/dishes', auth, async (req, res) => {
 		const newDish = new Dish({
 			...req.body,
 			owner: req.user._id,
-			category: _id
+			category: _id,
+			image: undefined
 		})
 
 		await newDish.save()
