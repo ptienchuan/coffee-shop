@@ -177,7 +177,7 @@ router.get('/:id/image', auth, async (req, res) => {
 
 	try {
 		const dish = await Dish.findOne({ _id, owner: req.user._id })
-		if (!dish || !dish.image) {
+		if (!dish || !dish.image.source) {
 			throw new Error()
 		}
 
